@@ -3,12 +3,34 @@ name = "signal-processing"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = "~=3.12.0"
 dependencies = [
+    "gpflow>=2.5.2",
+    "ipython>=9.18.1",
     "matplotlib>=3.11.2",
     "numpy>=2.5.4",
+    "pandas>=3.1.0",
+    "pyg-lib>=0.9.0",
     "pygobject>=3.58.1",
+    "pygsp>=0.6.1",
     "scikit-image>=0.26.0",
     "scikit-learn>=1.9.1",
     "scipy>=1.18.1",
+    "setuptools<82",
+    "tensorflow~=2.20.0",
+    "torch>=2.12.0",
+    "torch-cluster>=1.6.3",
+    "torch-geometric>=2.8.1",
+    "torch-scatter>=2.1.2",
+    "torch-sparse>=0.6.18",
+    "torch-spline-conv>=1.2.2",
 ]
+
+[tool.uv]
+find-links = ["https://data.pyg.org/whl/torch-2.12.0+cpu.html"]
+
+[tool.uv.extra-build-dependencies]
+torch-scatter = ["torch"]
+torch-cluster = ["torch"]
+torch-spline-conv = ["torch"]
+

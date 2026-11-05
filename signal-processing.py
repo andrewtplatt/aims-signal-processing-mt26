@@ -31,6 +31,7 @@ def fourier_transform(f: np.ndarray):
     #   can be reconstructed exactly 1:1 from the output. Hence, the signa
     #   energy must be exactly preserved, otherwise they would be lossy and
     #   reconstruction would be impossible.
+    # Parseval's theorem
 
     L = pyl.fftshift(np.log(abs(F) + 1e-1))
     plt.figure(figsize=(5, 5))
@@ -202,8 +203,8 @@ def non_linear_denoising(f: np.ndarray, y: np.ndarray, f_denoised_linear: np.nda
 
 def main():
     f = plot_image()
-    f_lpf = filtering(f)
-    fourier_vs_wavelet(f, f_lpf)
+    # f_lpf = filtering(f)
+    # fourier_vs_wavelet(f, f_lpf)
     f, y, f_denoised_linear = linear_denoising()
     non_linear_denoising(f, y, f_denoised_linear)
 
